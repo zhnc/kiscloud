@@ -1,0 +1,93 @@
+{
+  "@aws-cdk/core:enableStackNameDuplicates": "true",
+  "vpc-provider:account=XXXXXXXXXXXX:filter.vpc-id=vpc-XXXXXXXXXXXX:region=cn-northwest-1:returnAsymmetricSubnets=true": {
+    "vpcId": "vpc-XXXXXXXXXXXX",
+    "availabilityZones": [],
+    "subnetGroups": [
+      {
+        "name": "Public",
+        "type": "Public",
+        "subnets": [
+          {
+            "subnetId": "subnet-0c8e89a2c93421910",
+            "availabilityZone": "cn-northwest-1a",
+            "routeTableId": "rtb-048ef2f970dc25dfb"
+          },
+          {
+            "subnetId": "subnet-08029842b16e1ccef",
+            "availabilityZone": "cn-northwest-1a",
+            "routeTableId": "rtb-0c371fa343683242b"
+          },
+          {
+            "subnetId": "subnet-0a35f8550e89d866d",
+            "availabilityZone": "cn-northwest-1a",
+            "routeTableId": "rtb-048ef2f970dc25dfb"
+          },
+          {
+            "subnetId": "subnet-0f9f31a7869ea121c",
+            "availabilityZone": "cn-northwest-1a",
+            "routeTableId": "rtb-048ef2f970dc25dfb"
+          },
+          {
+            "subnetId": "subnet-00ddd01352221ddd0",
+            "availabilityZone": "cn-northwest-1a",
+            "routeTableId": "rtb-0c371fa343683242b"
+          },
+          {
+            "subnetId": "subnet-02c56b0e1c5054a24",
+            "availabilityZone": "cn-northwest-1b",
+            "routeTableId": "rtb-0c371fa343683242b"
+          },
+          {
+            "subnetId": "subnet-00b97f8da08079ac6",
+            "availabilityZone": "cn-northwest-1b",
+            "routeTableId": "rtb-048ef2f970dc25dfb"
+          },
+          {
+            "subnetId": "subnet-00f41b71774bce6d8",
+            "availabilityZone": "cn-northwest-1b",
+            "routeTableId": "rtb-048ef2f970dc25dfb"
+          },
+          {
+            "subnetId": "subnet-0577e5c6e0b0b094f",
+            "availabilityZone": "cn-northwest-1b",
+            "routeTableId": "rtb-048ef2f970dc25dfb"
+          },
+          {
+            "subnetId": "subnet-0d725c1a7d852c866",
+            "availabilityZone": "cn-northwest-1b",
+            "routeTableId": "rtb-0c371fa343683242b"
+          }
+        ]
+      },
+      {
+        "name": "Private",
+        "type": "Private",
+        "subnets": [
+          {
+            "subnetId": "subnet-0b098d42960049ed4",
+            "availabilityZone": "cn-northwest-1a",
+            "routeTableId": "rtb-06bb62b1703fcb827"
+          },
+          {
+            "subnetId": "subnet-0070e331a8bb50e0f",
+            "availabilityZone": "cn-northwest-1a",
+            "routeTableId": "rtb-048ef2f970dc25dfb"
+          },
+          {
+            "subnetId": "subnet-0abd84fb4886391e6",
+            "availabilityZone": "cn-northwest-1b",
+            "routeTableId": "rtb-048ef2f970dc25dfb"
+          },
+          {
+            "subnetId": "subnet-0cea20aeb31e5ac71",
+            "availabilityZone": "cn-northwest-1b",
+            "routeTableId": "rtb-06bb62b1703fcb827"
+          }
+        ]
+      }
+    ]
+  },
+  "ami:account=XXXXXXXXXXXX:filters.image-type.0=machine:filters.name.0=nginx1.1:filters.state.0=available:region=cn-northwest-1": "ami-0f267fdfcce9a273e",
+  "ami:account=XXXXXXXXXXXX:filters.image-type.0=machine:filters.name.0=eas cloud container:filters.state.0=available:region=cn-northwest-1": "ami-071e49ef0c1cd1e1d"
+}

@@ -1,0 +1,19 @@
+<#
+ Author: XXXX                                                    
+ Date: 2019-06-18 07:00                                         
+ Desc: 自动更新在线用户数（弹性伸缩）
+#>
+
+$count=(query user | Select-String -Pattern ismarter.*).Count
+$instance_id=Invoke-RestMethod http://169.254.169.254/latest/meta-data/instance-id
+$instance_type=Invoke-RestMethod http://169.254.169.254/latest/meta-data/instance-type
+$tags = aws ec2 describe-tags --filters "Name=resource-id,Values=${instance_id}" --region cn-northwest-1  --output=text | findStr 'PID' 
+$produceId = (${tags} -split"\s+")[4]
+
+If(($instance_type).Contains('c5.2xlarge')) {
+    $asgid = $produceId + "." + $instance_type + ".ASG_RDP"
+    aws cloudwatch put-metric-data --region cn-northwest-1 --metric-name OnLineCount --namespace UserCount --value $count --dimensions "produceId=$asgid"
+}
+
+aws cloudwatch put-metric-data --region cn-northwest-1 --metric-name OnLineCount --namespace UserCount --value $count --dimensions "produceId=$produceId"
+aws cloudwatch put-metric-data --region cn-northwest-1 --metric-name OnLineCount --namespace UserCount --value $count --dimensions "produceId=$produceId,InstanceID=$instance_id"
