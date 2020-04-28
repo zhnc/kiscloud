@@ -1,8 +1,12 @@
-# Welcome to your CDK JavaScript project!
+# It is the next gen auto deployment for project https://github.com/zhnc/aws-insfra/tree/kis-ningxia
 
-This is a blank project for JavaScript development with CDK.
+It extract the app cluster deployment, refactor it by CDK, it more easy to deployment and maintain.
 
-The `cdk.json` file tells the CDK Toolkit how to execute your app. The build step is not required when using JavaScript.
+* `npm install`   install dependency
+* `cdk deploy`    will help you to deploy a new app cluster with interactive parameters.
+
+
+![](arch.png)
 
 ## Useful commands
 
