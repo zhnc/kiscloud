@@ -8,6 +8,7 @@ const app = new cdk.App(process.argv);
 
 new KisCloudIISStack(app, 'KisCloudStack-IIS-1', {
     env: {
+        "ddfdf":"xxx";
         'account': 'XXXXXXXXXXXX',
         'region': 'cn-northwest-1'
     },
